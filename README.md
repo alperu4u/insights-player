@@ -23,3 +23,5 @@ The Apps Script integration in `integrations/google-apps-script.gs` stores submi
 ## Deploy
 
 This repository is configured for Next.js deployment on Vercel. Pushes to `main` deploy automatically after the Git integration is enabled.
+
+<!-- Deployment trigger: activate submission diagnostics after Git integration. -->
