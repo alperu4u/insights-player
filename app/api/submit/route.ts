@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   const payload = await request.json();
-  const endpoint = process.env.GOOGLE_APPS_SCRIPT_URL?.trim();
+  // Public web-app endpoint. The matching integration token remains server-only in Vercel.
+  const endpoint = "https://script.google.com/macros/s/AKfycbzmCESJm6tnhXFeUzU3zt3lMnZewMxogFCASpYjv0rzbEym89OgaFSHMXWJRZi1Ha-h/exec";
   const token = process.env.GOOGLE_APPS_SCRIPT_TOKEN?.trim();
   if (!payload?.player?.name || !payload?.player?.email || !payload?.player?.consent || !payload?.answers) {
     return NextResponse.json({ stored: false, emailSent: false, error: "Missing required submission details." }, { status: 400 });
